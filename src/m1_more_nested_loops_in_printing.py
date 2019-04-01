@@ -74,6 +74,12 @@ def triangle_right_justified(r):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # -------------------------------------------------------------------------
+    for k in range(1, r + 1):
+        print(" " * (r - k), end="")
+        for j in range(1, k + 1):
+            print(j, end="")
+        print()
+
 
 
 def run_test_triangle_upside_down():
@@ -118,7 +124,11 @@ def triangle_upside_down(r):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # -------------------------------------------------------------------------
-
+    for k in range(0, r+1):
+        print(" " * k, end="")
+        for j in range(1,r-k+1):
+            print(j, end="")
+        print()
 
 def run_test_vee():
     """ Tests the    vee    function. """
@@ -169,7 +179,15 @@ def vee(r):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # -------------------------------------------------------------------------
-
+    for k in range(r):
+        for i in range(k):
+            print(' ', end='')
+        for j in range(r - k):
+            print(j + 1, end='')
+        print('-', end='')
+        for l in range(r - k):
+            print(r - l - k, end='')
+        print()
 
 def run_test_numbers_constant_forward():
     """ Tests the    numbers_constant_forward    function. """
@@ -190,7 +208,6 @@ def run_test_numbers_constant_forward():
     print('Test 4 of numbers_constant_forward: (7, 3, 4)')
     numbers_constant_forward(7, 3, 4)
 
-
 def numbers_constant_forward(r, maxnum, n):
     """
     Prints a rectangle of numbers, with r rows.
@@ -198,7 +215,6 @@ def numbers_constant_forward(r, maxnum, n):
     then a space, then n 3s, etc. up to n maxnum's.
     (It is easiest to include a space after the last
     set of digits on each row, but you don't have to.)
-
     For example, when r = 4, maxnum = 7 and n = 3:
        111 222 333 444 555 666 777
        111 222 333 444 555 666 777
@@ -207,17 +223,15 @@ def numbers_constant_forward(r, maxnum, n):
     Notice that there were r = 4 rows;
     each row had numbers that went from 1 to maxnum = 7; and
     there were n occurrences of each number on each row.
-
     Here is another example,
     when r = 3, maxnum = 5 and n = 8:
        11111111 22222222 33333333 44444444 55555555
        11111111 22222222 33333333 44444444 55555555
        11111111 22222222 33333333 44444444 55555555
-
     Preconditions:  r, maxnum and n are positive integers.
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: What loop structure do you need for this problem?
@@ -227,7 +241,12 @@ def numbers_constant_forward(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # -------------------------------------------------------------------------
-
+    for k in range(r):
+        for j in range(maxnum):
+            for l in range(n):
+                print(1 + j, end='')
+            print(' ', end='')
+        print()
 
 def run_test_numbers_constant_backwards():
     """ Tests the    numbers_constant_backwards    function. """
@@ -247,7 +266,6 @@ def run_test_numbers_constant_backwards():
 
     print('Test 4 of numbers_constant_backwards: (7, 3, 4)')
     numbers_constant_backwards(7, 3, 4)
-
 
 def numbers_constant_backwards(r, maxnum, n):
     """
@@ -269,7 +287,12 @@ def numbers_constant_backwards(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # -------------------------------------------------------------------------
-
+    for k in range(r):
+        for j in range(maxnum):
+            for l in range(n):
+                print(maxnum - j, end='')
+            print(' ', end='')
+        print()
 
 def run_test_numbers_increasing_forward():
     """ Tests the    numbers_increasing_forward    function. """
@@ -293,23 +316,19 @@ def run_test_numbers_increasing_forward():
     print('Test 5 of numbers_increasing_forward: (2, 1)')
     numbers_increasing_forward(2, 1)
 
-
 def numbers_increasing_forward(r, maxnum):
     """
     Prints a rectangle of numbers, with r rows, as in the previous
     two problems.  But now each row has one 1, two 2s, three 3s,
     four 4s, etc. up to the given maxnum.
-
     For example, when r = 4 and maxnum = 3:
        1 22 333
        1 22 333
        1 22 333
        1 22 333
-
     Another example, when r = 2 and maxnum = 7:
        1 22 333 4444 55555 666666 7777777
        1 22 333 4444 55555 666666 7777777
-
     Preconditions:  r and maxnum are positive integers.
     """
     # -------------------------------------------------------------------------
@@ -321,7 +340,12 @@ def numbers_increasing_forward(r, maxnum):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # -------------------------------------------------------------------------
-
+    for k in range(r):
+        for j in range(maxnum):
+            for l in range(j + 1):
+                print(j + 1, end='')
+            print(' ', end='')
+        print()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
